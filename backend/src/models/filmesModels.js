@@ -5,6 +5,13 @@ const getAll = async () => {
   return filmes.rows;
 };
 
+const insertfilm = async(nome,preco) => {
+  const filmes = await connection.query('INSERT INTO catalogo (nome, preco) VALUES ($1, $2)', [nome, preco]);
+  return filmes.rows;
+};
+
+
+
 module.exports = {
-  getAll
+  getAll, insertfilm
 };
