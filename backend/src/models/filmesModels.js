@@ -10,8 +10,14 @@ const insertfilm = async(nome,preco) => {
   return filmes.rows;
 };
 
+const deleteFilme = async (id) => {
+  const removedFilme = await connection.query('DELETE FROM catalogo WHERE id = $1', [id]);
+  return removedFilme;
+};
+
+
 
 
 module.exports = {
-  getAll, insertfilm
+  getAll, insertfilm, deleteFilme,
 };

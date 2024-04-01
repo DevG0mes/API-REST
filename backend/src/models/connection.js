@@ -1,14 +1,4 @@
-/*const pg = require('pg');
 
-const connection = pg.CreatePool({
-  host: process.env.POSTGRES_HOST,
-  user: process.env.POSTGRES_USER,
-  password: process.env.POSTGRES_PASSWORD,
-  database: process.env.POSTGRES_DATABASE
-});
-
-module.exports = connection;
-*/
 const { Pool } = require('pg');
 require('dotenv').config();
 
