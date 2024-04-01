@@ -5,7 +5,7 @@ const getAll = async(req,res) => {
   return res.status(200).json(filmes);
 };
 const insertfilm = async(req,res) => {
-  console.log(req.body);
+  
   const nome = req.body.nome;
   const preco = req.body.preco;
 
@@ -20,6 +20,15 @@ const deleteFilme = async(req,res) =>{
   return res.status(204).json();
 };
 
+const UpdatedFilme = async (req,res) => {
+  
+  const {id} = req.params;
+  
+  await filmesModels.UpdatedFilme(id, req.body);
+  
+  return res.status(204).json();
+};
+
 module.exports = {
-  getAll, insertfilm, deleteFilme
+  getAll, insertfilm, deleteFilme, UpdatedFilme
 };
